@@ -1,0 +1,8 @@
+{
+  "name": "quicksheet-regex",
+  "version": "1.0.0",
+  "prefix": "regex",
+  "description": "Explain regex patterns — breaks down regular expressions into human-readable components",
+  "entry": "dotnet run --project QuickSheetRegex.csproj",
+  "minProtocolVersion": 1
+}
