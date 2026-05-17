@@ -51,8 +51,8 @@ class Program
 
         if (string.IsNullOrEmpty(pattern))
         {
-            cells.Add(new { row = 0, col = 0, value = "Usage: regex <pattern>" });
-            cells.Add(new { row = 1, col = 0, value = "Example: regex ^[a-z]+\\d{2,4}$" });
+            cells.Add(new { r = 0, c = 0, v = "Usage: regex <pattern>" });
+            cells.Add(new { r = 1, c = 0, v = "Example: regex ^[a-z]+\\d{2,4}$" });
             return cells;
         }
 
@@ -63,12 +63,12 @@ class Program
         }
         catch (ArgumentException ex)
         {
-            cells.Add(new { row = 0, col = 0, value = $"INVALID: {ex.Message}" });
+            cells.Add(new { r = 0, c = 0, v = $"INVALID: {ex.Message}" });
             return cells;
         }
 
         // Header
-        cells.Add(new { row = 0, col = 0, value = $"Pattern: {pattern}" });
+        cells.Add(new { r = 0, c = 0, v = $"Pattern: {pattern}" });
 
         int row = 1;
 
@@ -76,15 +76,15 @@ class Program
         var tokens = Tokenize(pattern);
         foreach (var (token, explanation) in tokens)
         {
-            cells.Add(new { row, col = 0, value = token });
-            cells.Add(new { row, col = 1, value = explanation });
+            cells.Add(new { r = row, c = 0, v = token });
+            cells.Add(new { r = row, c = 1, v = explanation });
             row++;
         }
 
         // Summary
         row++;
-        cells.Add(new { row, col = 0, value = "Summary:" });
-        cells.Add(new { row, col = 1, value = Summarize(pattern, tokens) });
+        cells.Add(new { r = row, c = 0, v = "Summary:" });
+        cells.Add(new { r = row, c = 1, v = Summarize(pattern, tokens) });
 
         return cells;
     }
