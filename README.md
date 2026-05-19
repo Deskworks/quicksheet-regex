@@ -41,7 +41,7 @@ The extension outputs a table explaining each token:
 2. The extension registers with prefix `regex`
 
 ```bash
-git clone https://github.com/cemheren/quicksheet-regex.git
+git clone https://github.com/Deskworks/quicksheet-regex.git
 ```
 
 ## Requirements
